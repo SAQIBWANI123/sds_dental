@@ -10,7 +10,7 @@
 .dm .intro h1 span{color:var(--teal2);background:linear-gradient(90deg,var(--teal2),#2563eb);-webkit-background-clip:text;background-clip:text}@supports((-webkit-background-clip:text) or (background-clip:text)){.dm .intro h1 span{-webkit-text-fill-color:transparent;color:transparent}}
 .dm .intro p{max-width:46em;margin:0 auto 18px;color:var(--mute);font-size:1.1rem}
 .dm .badges span{display:inline-block;margin:4px;padding:5px 14px;border-radius:20px;background:#e6f7f4;color:var(--teal2);font-size:.85rem;font-weight:600;border:1px solid #bfeae3}
-.dm .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:30px 0}
+.dm .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:30px 0}
 .dm .stat{background:linear-gradient(135deg,var(--navy),#12395a);color:#fff;border-radius:12px;padding:20px;text-align:center}
 .dm .stat b{display:block;font:800 2rem Georgia,serif;color:var(--cyan)}.dm .stat span{font-size:.9rem;color:#bcd3e0}
 .dm h2{font:800 1.8rem/1.2 Georgia,serif;color:var(--navy);margin:64px 0 6px;text-align:center}
@@ -19,21 +19,21 @@
 .dm .videobox{background:linear-gradient(135deg,var(--navy),#0f766e);border-radius:18px;padding:18px;box-shadow:0 24px 50px -22px rgba(11,31,58,.7)}
 .dm .videobox video,.dm .videobox img{display:block;width:100%;border-radius:10px;background:#000}
 .dm .videobox p{color:#cfe9e5;text-align:center;margin:12px 0 2px;font-size:.92rem}
-.dm .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.dm .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
 .dm .fc{background:#fff;border:1px solid var(--line);border-top:4px solid var(--c);border-radius:12px;padding:22px;box-shadow:0 6px 18px -12px rgba(11,31,58,.35)}
 .dm .ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;font-size:1.4rem;background:#eef6f5;background:color-mix(in srgb,var(--c) 14%,#fff);margin-bottom:10px}
 .dm .fc h4{margin:0 0 4px;font-size:1.05rem;color:var(--navy)}.dm .fc p{margin:0;color:var(--mute);font-size:.93rem}
-.dm .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.dm .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
 .dm .st{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:18px;position:relative}
 .dm .st b{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--teal),#2563eb);color:#fff;margin-bottom:8px}
 .dm .st h4{margin:0 0 2px;color:var(--navy)}.dm .st p{margin:0;font-size:.9rem;color:var(--mute)}
 .dm .path{margin-top:16px;background:var(--navy);color:#fff;border-radius:10px;padding:14px 18px;text-align:center;font-size:.93rem}.dm .path i{color:var(--gold);font-style:normal}
-.dm .row{display:grid;grid-template-columns:1fr 1.25fr;gap:34px;align-items:center;margin:0 0 46px}
-.dm .row.rev{grid-template-columns:1.25fr 1fr}.dm .row.rev .txt{order:2}
+.dm .row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:34px;align-items:center;margin:0 0 46px}
+.dm .row.rev{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)}.dm .row.rev .txt{order:2}
 .dm .tag{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--teal2);background:#e6f7f4;padding:3px 12px;border-radius:12px}
 .dm .row h3{font:700 1.45rem/1.25 Georgia,serif;margin:10px 0 8px;color:var(--navy)}.dm .row p{margin:0;color:var(--mute)}
 .dm .pic img{display:block;width:100%;border-radius:12px;border:1px solid var(--line);box-shadow:0 18px 36px -18px rgba(11,31,58,.55)}
-.dm .two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.dm .two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px}
 .dm .box{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:24px 26px}
 .dm .box h3{margin:0 0 8px;color:var(--navy)}.dm .box ul{margin:0;padding-left:20px;color:var(--mute)}
 .dm table{width:100%;border-collapse:separate;border-spacing:0;border-radius:12px;overflow:hidden;border:1px solid var(--line)}
@@ -43,10 +43,15 @@
 .dm .cta{margin-top:64px;border-radius:18px;padding:52px 36px;text-align:center;color:#fff;background:linear-gradient(rgba(11,31,58,.62),rgba(11,31,58,.62)),url(banner_cta.png) center/cover,#0b1f3a}
 .dm .cta h2{color:#fff;margin:0}.dm .cta p{color:#d3ebe7;max-width:36em;margin:14px auto 6px}.dm .cta a.btn{color:#3a2a00}
 .dm .foot{text-align:center;color:var(--mute);font-size:.9rem;margin-top:26px}
+.dm{--hero-ratio:16/6;--shot-ratio:16/10;overflow-x:clip}
+.dm .txt,.dm .pic,.dm .fc,.dm .st,.dm .box{min-width:0}
+.dm .hero img{aspect-ratio:var(--hero-ratio);object-fit:contain;background:var(--navy)}
+.dm .pic img{aspect-ratio:var(--shot-ratio);object-fit:contain;background:var(--soft)}
+.dm .videobox video,.dm .videobox img{aspect-ratio:16/9;object-fit:contain}
 .dm .box a{overflow-wrap:anywhere}.dm .path{line-height:1.9}
-@media(max-width:960px){.dm .grid{grid-template-columns:1fr 1fr}}
-@media(max-width:800px){.dm .two{grid-template-columns:1fr}.dm .steps,.dm .stats{grid-template-columns:1fr 1fr}.dm .row,.dm .row.rev{grid-template-columns:1fr;gap:18px;margin-bottom:32px}.dm .row.rev .txt{order:0}.dm .intro h1{font-size:1.8rem}.dm h2{font-size:1.5rem;margin-top:48px}.dm td:first-child{white-space:normal}.dm .cta{padding:38px 20px}.dm .videobox{padding:10px}}
-@media(max-width:560px){.dm .grid,.dm .steps,.dm .stats{grid-template-columns:1fr}.dm .intro h1{font-size:1.55rem}}
+@media(max-width:960px){.dm .grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+@media(max-width:800px){.dm .two{grid-template-columns:minmax(0,1fr)}.dm .steps,.dm .stats{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.dm .row,.dm .row.rev{grid-template-columns:minmax(0,1fr);gap:18px;margin-bottom:32px}.dm .row.rev .txt{order:0}.dm .intro h1{font-size:1.8rem}.dm h2{font-size:1.5rem;margin-top:48px}.dm td:first-child{white-space:normal}.dm .cta{padding:38px 20px}.dm .videobox{padding:10px}}
+@media(max-width:560px){.dm .grid,.dm .steps,.dm .stats{grid-template-columns:minmax(0,1fr)}.dm .intro h1{font-size:1.55rem}}
 </style></head>
 <body><div class="dm">
 <div class="hero"><img src="banner_hero.png" alt="Dental Management System for Odoo 19"/></div>
