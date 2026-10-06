@@ -4,7 +4,7 @@ import { Component, onWillStart, useState } from "@odoo/owl";
 import { useService } from "@web/core/utils/hooks";
 
 export class DentalDashboard extends Component {
-    static template = "dental_management.Dashboard";
+    static template = "smartdesk_dental_management.Dashboard";
 
     setup() {
         this.orm = useService("orm");
@@ -22,7 +22,7 @@ export class DentalDashboard extends Component {
     }
 
     open(xmlid) {
-        this.action.doAction(`dental_management.${xmlid}`);
+        this.action.doAction(`smartdesk_dental_management.${xmlid}`);
     }
 
     openAppointment(id) {

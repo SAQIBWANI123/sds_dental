@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <menuitem id="menu_dental_root" name="Dental" sequence="30"
-              web_icon="dental_management,static/description/icon.png"
+              web_icon="smartdesk_dental_management,static/description/icon.png"
               groups="group_dental_user"/>
 
     <menuitem id="menu_dental_dashboard" name="Dashboard" parent="menu_dental_root"

@@ -1,6 +1,6 @@
 def post_init_hook(env):
     """Give the administrator access to the dental menus right after install."""
-    manager = env.ref('dental_management.group_dental_manager', raise_if_not_found=False)
+    manager = env.ref('smartdesk_dental_management.group_dental_manager', raise_if_not_found=False)
     if not manager:
         return
     field = 'group_ids' if 'group_ids' in env['res.users']._fields else 'groups_id'

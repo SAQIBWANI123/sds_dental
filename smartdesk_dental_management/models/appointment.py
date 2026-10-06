@@ -70,7 +70,7 @@ class DentalAppointment(models.Model):
 
     # workflow
     def action_confirm(self):
-        template = self.env.ref('dental_management.mail_template_appointment_confirm',
+        template = self.env.ref('smartdesk_dental_management.mail_template_appointment_confirm',
                                 raise_if_not_found=False)
         for rec in self:
             rec.state = 'confirmed'
@@ -116,7 +116,7 @@ class DentalAppointment(models.Model):
 
     @api.model
     def _cron_send_reminders(self):
-        template = self.env.ref('dental_management.mail_template_appointment_reminder',
+        template = self.env.ref('smartdesk_dental_management.mail_template_appointment_reminder',
                                 raise_if_not_found=False)
         if not template:
             return

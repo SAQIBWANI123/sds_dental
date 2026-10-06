@@ -46,9 +46,9 @@ All-in-one dental clinic management for Odoo 19 by SmartDeskSolutions.
     ],
     'assets': {
         'web.assets_backend': [
-            'dental_management/static/src/dashboard/dashboard.js',
-            'dental_management/static/src/dashboard/dashboard.xml',
-            'dental_management/static/src/dashboard/dashboard.scss',
+            'smartdesk_dental_management/static/src/dashboard/dashboard.js',
+            'smartdesk_dental_management/static/src/dashboard/dashboard.xml',
+            'smartdesk_dental_management/static/src/dashboard/dashboard.scss',
         ],
     },
     'images': ['static/description/banner.png'],

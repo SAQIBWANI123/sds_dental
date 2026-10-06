@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
-    <t t-name="dental_management.Dashboard">
+    <t t-name="smartdesk_dental_management.Dashboard">
         <div class="o_dental_dashboard overflow-auto h-100 p-4">
             <t t-if="state.loading">
                 <div class="text-center text-muted p-5">Loading dashboard...</div>

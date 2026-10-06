@@ -4,8 +4,8 @@
         <field name="name">Prescription</field>
         <field name="model">dental.prescription</field>
         <field name="report_type">qweb-pdf</field>
-        <field name="report_name">dental_management.report_prescription_document</field>
-        <field name="report_file">dental_management.report_prescription_document</field>
+        <field name="report_name">smartdesk_dental_management.report_prescription_document</field>
+        <field name="report_file">smartdesk_dental_management.report_prescription_document</field>
         <field name="print_report_name">'Prescription - %s' % object.name</field>
         <field name="binding_model_id" ref="model_dental_prescription"/>
         <field name="binding_type">report</field>

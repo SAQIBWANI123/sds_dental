@@ -6,14 +6,14 @@ Patients, dental chart (odontogram), appointments with calendar and conflict det
 per-tooth procedures and one-click invoicing, treatment plans, prescriptions (PDF), lab orders, X-rays,
 dentists/rooms/procedures/medicines configuration and an interactive dashboard.
 
-- Technical name: `dental_management`
+- Technical name: `smartdesk_dental_management`
 - Odoo version: 19.0 | License: LGPL-3
 - Depends on: `base`, `mail`, `account`, `web`
 
 ## Install
 ```bash
-git clone <your-repo-url> /path/to/addons/dental_management
-./odoo-bin -c odoo.conf -d <db> -i dental_management
+git clone <your-repo-url> /path/to/addons/smartdesk_dental_management
+./odoo-bin -c odoo.conf -d <db> -i smartdesk_dental_management
 ```
 Full documentation: `static/description/index.html`.
 
