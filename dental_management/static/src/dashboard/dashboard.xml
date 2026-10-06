@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="dental_management.Dashboard">
+        <div class="o_dental_dashboard overflow-auto h-100 p-4">
+            <t t-if="state.loading">
+                <div class="text-center text-muted p-5">Loading dashboard...</div>
+            </t>
+            <t t-else="">
+                <t t-set="d" t-value="state.data"/>
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div>
+                        <h2 class="mb-0">Clinic dashboard</h2>
+                        <div class="text-muted">Today at a glance, plus this month's performance.</div>
+                    </div>
+                    <div>
+                        <button class="btn btn-primary me-2" t-on-click="() => this.open('action_dental_appointment')">New appointment</button>
+                        <button class="btn btn-secondary" t-on-click="load">Refresh</button>
+                    </div>
+                </div>
+
+                <div class="o_dd_kpis mb-4">
+                    <div class="o_dd_kpi" t-on-click="() => this.open('action_dental_patient')">
+                        <div class="o_dd_value" t-out="d.kpis.patients"/>
+                        <div class="o_dd_label">Patients</div>
+                        <div class="o_dd_sub"><t t-out="d.kpis.new_patients"/> new this month</div>
+                    </div>
+                    <div class="o_dd_kpi" t-on-click="() => this.open('action_dental_appointment')">
+                        <div class="o_dd_value" t-out="d.kpis.today"/>
+                        <div class="o_dd_label">Appointments today</div>
+                        <div class="o_dd_sub"><t t-out="d.kpis.today_done"/> completed</div>
+                    </div>
+                    <div class="o_dd_kpi" t-on-click="() => this.open('action_dental_appointment')">
+                        <div class="o_dd_value" t-out="d.kpis.upcoming"/>
+                        <div class="o_dd_label">Next 7 days</div>
+                        <div class="o_dd_sub">upcoming bookings</div>
+                    </div>
+                    <div class="o_dd_kpi" t-on-click="() => this.open('action_dental_treatment')">
+                        <div class="o_dd_value" t-out="d.kpis.treatments_open"/>
+                        <div class="o_dd_label">Open treatments</div>
+                        <div class="o_dd_sub">draft or in progress</div>
+                    </div>
+                    <div class="o_dd_kpi" t-on-click="() => this.open('action_dental_treatment')">
+                        <div class="o_dd_value" t-out="money(d.kpis.revenue_month)"/>
+                        <div class="o_dd_label">Revenue this month</div>
+                        <div class="o_dd_sub">completed treatments</div>
+                    </div>
+                    <div class="o_dd_kpi o_dd_warn" t-on-click="() => this.open('action_dental_treatment')">
+                        <div class="o_dd_value" t-out="money(d.kpis.outstanding)"/>
+                        <div class="o_dd_label">Outstanding</div>
+                        <div class="o_dd_sub">unpaid invoices</div>
+                    </div>
+                    <div class="o_dd_kpi" t-on-click="() => this.open('action_dental_plan')">
+                        <div class="o_dd_value" t-out="d.kpis.plans_open"/>
+                        <div class="o_dd_label">Open plans</div>
+                        <div class="o_dd_sub">proposed or accepted</div>
+                    </div>
+                    <div class="o_dd_kpi" t-on-click="() => this.open('action_dental_lab')">
+                        <div class="o_dd_value" t-out="d.kpis.lab_pending"/>
+                        <div class="o_dd_label">At the lab</div>
+                        <div class="o_dd_sub">waiting to be received</div>
+                    </div>
+                </div>
+
+                <div class="o_dd_grid">
+                    <div class="o_dd_card o_dd_wide">
+                        <h5>Today's appointments</h5>
+                        <t t-if="!d.today_appointments.length">
+                            <div class="text-muted py-3">No appointments scheduled for today.</div>
+                        </t>
+                        <table t-else="" class="table table-sm mb-0">
+                            <tbody>
+                                <tr t-foreach="d.today_appointments" t-as="a" t-key="a.id" class="o_dd_row" t-on-click="() => this.openAppointment(a.id)">
+                                    <td class="fw-bold" t-out="a.time"/>
+                                    <td t-out="a.patient"/>
+                                    <td class="text-muted">Dr. <t t-out="a.dentist"/></td>
+                                    <td class="text-muted" t-out="a.reason"/>
+                                    <td class="text-end"><span class="o_dd_badge" t-attf-style="background:#{a.color}" t-out="a.state_label"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="o_dd_card">
+                        <h5>Revenue, last 6 months</h5>
+                        <div class="o_dd_bars">
+                            <div t-foreach="d.revenue" t-as="r" t-key="r_index" class="o_dd_bar_col" t-att-title="money(r.value)">
+                                <div class="o_dd_bar" t-attf-style="height:#{barHeight(r.value)}%"/>
+                                <div class="o_dd_bar_label" t-out="r.label"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="o_dd_card">
+                        <h5>Appointments by status (month)</h5>
+                        <div class="d-flex align-items-center">
+                            <div class="o_dd_donut" t-att-style="donutStyle"><span t-out="statusTotal"/></div>
+                            <ul class="o_dd_legend">
+                                <li t-foreach="d.by_state" t-as="s" t-key="s.key">
+                                    <i t-attf-style="background:#{s.color}"/> <t t-out="s.label"/> <b t-out="s.count"/>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="o_dd_card">
+                        <h5>Top procedures this year</h5>
+                        <t t-if="!d.top_procedures.length"><div class="text-muted">No completed treatments yet.</div></t>
+                        <div t-foreach="d.top_procedures" t-as="p" t-key="p_index" class="mb-2">
+                            <div class="d-flex justify-content-between small"><span t-out="p.name"/><b t-out="money(p.amount)"/></div>
+                            <div class="o_dd_track"><div class="o_dd_fill" t-attf-style="width:#{Math.round(p.amount / maxProcedure * 100)}%"/></div>
+                        </div>
+                    </div>
+
+                    <div class="o_dd_card">
+                        <h5>Dentist workload (done this month)</h5>
+                        <t t-if="!d.dentist_load.length"><div class="text-muted">No completed visits yet.</div></t>
+                        <div t-foreach="d.dentist_load" t-as="x" t-key="x_index" class="mb-2">
+                            <div class="d-flex justify-content-between small"><span>Dr. <t t-out="x.name"/></span><b t-out="x.count"/></div>
+                            <div class="o_dd_track"><div class="o_dd_fill" t-attf-style="width:#{Math.round(x.count / maxDentist * 100)}%"/></div>
+                        </div>
+                    </div>
+
+                    <div class="o_dd_card">
+                        <h5>Patients by gender</h5>
+                        <ul class="o_dd_legend">
+                            <li t-foreach="d.genders" t-as="g" t-key="g_index"><t t-out="g.label"/> <b t-out="g.count"/></li>
+                        </ul>
+                    </div>
+                </div>
+            </t>
+        </div>
+    </t>
+</templates>

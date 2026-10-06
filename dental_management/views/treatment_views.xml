@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_dental_treatment_form" model="ir.ui.view">
+        <field name="name">dental.treatment.form</field>
+        <field name="model">dental.treatment</field>
+        <field name="arch" type="xml">
+            <form string="Treatment">
+                <header>
+                    <button name="action_start" type="object" string="Start Treatment" class="btn-primary" invisible="state != 'draft'"/>
+                    <button name="action_done" type="object" string="Complete" class="btn-primary" invisible="state != 'in_progress'"/>
+                    <button name="action_create_invoice" type="object" string="Create Invoice" invisible="state == 'cancelled' or invoice_id"/>
+                    <button name="action_view_invoice" type="object" string="View Invoice" invisible="not invoice_id"/>
+                    <button name="action_cancel" type="object" string="Cancel" invisible="state in ('done', 'cancelled')"/>
+                    <button name="action_draft" type="object" string="Set to Draft" invisible="state != 'cancelled'"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,in_progress,done"/>
+                </header>
+                <sheet>
+                    <div class="oe_title"><h1><field name="name"/></h1></div>
+                    <field name="currency_id" invisible="1"/>
+                    <field name="chart_updated" invisible="1"/>
+                    <group>
+                        <group>
+                            <field name="patient_id"/>
+                            <field name="dentist_id"/>
+                            <field name="appointment_id" domain="[('patient_id', '=', patient_id)]"/>
+                        </group>
+                        <group>
+                            <field name="date"/>
+                            <field name="invoice_id"/>
+                            <field name="payment_state" widget="badge" invisible="not invoice_id"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Procedures" name="lines">
+                            <field name="line_ids">
+                                <list editable="bottom">
+                                    <field name="procedure_id"/>
+                                    <field name="tooth_number"/>
+                                    <field name="surface"/>
+                                    <field name="new_condition" optional="show"/>
+                                    <field name="description" optional="hide"/>
+                                    <field name="quantity"/>
+                                    <field name="price_unit"/>
+                                    <field name="discount" optional="show"/>
+                                    <field name="subtotal"/>
+                                    <field name="currency_id" column_invisible="1"/>
+                                </list>
+                            </field>
+                            <group class="oe_subtotal_footer">
+                                <field name="amount_total" class="oe_subtotal_footer_separator"/>
+                            </group>
+                        </page>
+                        <page string="Diagnosis &amp; Notes" name="notes">
+                            <group>
+                                <field name="diagnosis"/>
+                                <field name="notes"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_dental_treatment_list" model="ir.ui.view">
+        <field name="name">dental.treatment.list</field>
+        <field name="model">dental.treatment</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/><field name="date"/><field name="patient_id"/><field name="dentist_id"/>
+                <field name="amount_total" sum="Total"/>
+                <field name="currency_id" column_invisible="1"/>
+                <field name="state" widget="badge" decoration-success="state == 'done'" decoration-warning="state == 'in_progress'" decoration-danger="state == 'cancelled'"/>
+                <field name="payment_state" widget="badge" optional="show"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_dental_treatment_pivot" model="ir.ui.view">
+        <field name="name">dental.treatment.pivot</field>
+        <field name="model">dental.treatment</field>
+        <field name="arch" type="xml">
+            <pivot string="Treatments">
+                <field name="dentist_id" type="row"/>
+                <field name="date" interval="month" type="col"/>
+                <field name="amount_total" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="view_dental_treatment_graph" model="ir.ui.view">
+        <field name="name">dental.treatment.graph</field>
+        <field name="model">dental.treatment</field>
+        <field name="arch" type="xml">
+            <graph string="Revenue" type="bar">
+                <field name="date" interval="month"/>
+                <field name="amount_total" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="view_dental_treatment_search" model="ir.ui.view">
+        <field name="name">dental.treatment.search</field>
+        <field name="model">dental.treatment</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/><field name="patient_id"/><field name="dentist_id"/>
+                <filter name="in_progress" string="In Progress" domain="[('state', '=', 'in_progress')]"/>
+                <filter name="done" string="Completed" domain="[('state', '=', 'done')]"/>
+                <filter name="not_invoiced" string="Not Invoiced" domain="[('invoice_id', '=', False), ('state', '!=', 'cancelled')]"/>
+                <group>
+                    <filter name="group_dentist" string="Dentist" context="{'group_by': 'dentist_id'}"/>
+                    <filter name="group_patient" string="Patient" context="{'group_by': 'patient_id'}"/>
+                    <filter name="group_month" string="Month" context="{'group_by': 'date:month'}"/>
+                    <filter name="group_state" string="Status" context="{'group_by': 'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_dental_treatment" model="ir.actions.act_window">
+        <field name="name">Treatments</field>
+        <field name="res_model">dental.treatment</field>
+        <field name="view_mode">list,form,pivot,graph</field>
+    </record>
+</odoo>

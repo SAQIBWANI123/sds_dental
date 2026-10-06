@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="procedure_cons" model="dental.procedure">
+        <field name="name">Consultation / Check-up</field><field name="code">CONS</field><field name="category">diagnostic</field><field name="price">30</field><field name="duration">0.5</field>
+    </record>
+    <record id="procedure_xray" model="dental.procedure">
+        <field name="name">Dental X-Ray</field><field name="code">XRAY</field><field name="category">diagnostic</field><field name="price">20</field><field name="duration">0.25</field>
+    </record>
+    <record id="procedure_scal" model="dental.procedure">
+        <field name="name">Scaling &amp; Polishing</field><field name="code">SCAL</field><field name="category">preventive</field><field name="price">60</field><field name="duration">0.75</field>
+    </record>
+    <record id="procedure_fluo" model="dental.procedure">
+        <field name="name">Fluoride Application</field><field name="code">FLUO</field><field name="category">preventive</field><field name="price">25</field><field name="duration">0.25</field>
+    </record>
+    <record id="procedure_seal" model="dental.procedure">
+        <field name="name">Pit &amp; Fissure Sealant</field><field name="code">SEAL</field><field name="category">preventive</field><field name="price">30</field><field name="duration">0.25</field>
+    </record>
+    <record id="procedure_fill" model="dental.procedure">
+        <field name="name">Composite Filling</field><field name="code">FILL</field><field name="category">restorative</field><field name="price">70</field><field name="duration">0.75</field>
+    </record>
+    <record id="procedure_fila" model="dental.procedure">
+        <field name="name">Amalgam Filling</field><field name="code">FILA</field><field name="category">restorative</field><field name="price">50</field><field name="duration">0.5</field>
+    </record>
+    <record id="procedure_rct" model="dental.procedure">
+        <field name="name">Root Canal Treatment</field><field name="code">RCT</field><field name="category">endodontic</field><field name="price">250</field><field name="duration">1.5</field>
+    </record>
+    <record id="procedure_crown" model="dental.procedure">
+        <field name="name">Porcelain Crown</field><field name="code">CROWN</field><field name="category">prosthodontic</field><field name="price">400</field><field name="duration">1.0</field>
+    </record>
+    <record id="procedure_brdg" model="dental.procedure">
+        <field name="name">Dental Bridge (per unit)</field><field name="code">BRDG</field><field name="category">prosthodontic</field><field name="price">350</field><field name="duration">1.0</field>
+    </record>
+    <record id="procedure_dent" model="dental.procedure">
+        <field name="name">Complete Denture</field><field name="code">DENT</field><field name="category">prosthodontic</field><field name="price">700</field><field name="duration">1.5</field>
+    </record>
+    <record id="procedure_impl" model="dental.procedure">
+        <field name="name">Dental Implant</field><field name="code">IMPL</field><field name="category">surgery</field><field name="price">1200</field><field name="duration">1.5</field>
+    </record>
+    <record id="procedure_exts" model="dental.procedure">
+        <field name="name">Simple Extraction</field><field name="code">EXTS</field><field name="category">surgery</field><field name="price">60</field><field name="duration">0.5</field>
+    </record>
+    <record id="procedure_extw" model="dental.procedure">
+        <field name="name">Surgical / Wisdom Tooth Extraction</field><field name="code">EXTW</field><field name="category">surgery</field><field name="price">200</field><field name="duration">1.0</field>
+    </record>
+    <record id="procedure_brac" model="dental.procedure">
+        <field name="name">Braces (Full Course)</field><field name="code">BRAC</field><field name="category">orthodontic</field><field name="price">2500</field><field name="duration">1.0</field>
+    </record>
+    <record id="procedure_algn" model="dental.procedure">
+        <field name="name">Clear Aligners</field><field name="code">ALGN</field><field name="category">orthodontic</field><field name="price">3500</field><field name="duration">1.0</field>
+    </record>
+    <record id="procedure_whit" model="dental.procedure">
+        <field name="name">Teeth Whitening</field><field name="code">WHIT</field><field name="category">cosmetic</field><field name="price">250</field><field name="duration">1.0</field>
+    </record>
+    <record id="procedure_venr" model="dental.procedure">
+        <field name="name">Porcelain Veneer</field><field name="code">VENR</field><field name="category">cosmetic</field><field name="price">450</field><field name="duration">1.0</field>
+    </record>
+    <record id="procedure_ging" model="dental.procedure">
+        <field name="name">Gingivectomy</field><field name="code">GING</field><field name="category">periodontic</field><field name="price">180</field><field name="duration">1.0</field>
+    </record>
+    <record id="condition_1" model="dental.medical.condition">
+        <field name="name">Diabetes</field><field name="color">1</field>
+    </record>
+    <record id="condition_2" model="dental.medical.condition">
+        <field name="name">Hypertension</field><field name="color">2</field>
+    </record>
+    <record id="condition_3" model="dental.medical.condition">
+        <field name="name">Heart Disease</field><field name="color">3</field>
+    </record>
+    <record id="condition_4" model="dental.medical.condition">
+        <field name="name">Asthma</field><field name="color">4</field>
+    </record>
+    <record id="condition_5" model="dental.medical.condition">
+        <field name="name">Epilepsy</field><field name="color">5</field>
+    </record>
+    <record id="condition_6" model="dental.medical.condition">
+        <field name="name">Hepatitis</field><field name="color">6</field>
+    </record>
+    <record id="condition_7" model="dental.medical.condition">
+        <field name="name">Bleeding Disorder</field><field name="color">7</field>
+    </record>
+    <record id="condition_8" model="dental.medical.condition">
+        <field name="name">Thyroid Disorder</field><field name="color">8</field>
+    </record>
+    <record id="medicine_1" model="dental.medicine">
+        <field name="name">Amoxicillin</field><field name="form">capsule</field><field name="strength">500 mg</field><field name="default_dosage">1 capsule</field>
+    </record>
+    <record id="medicine_2" model="dental.medicine">
+        <field name="name">Ibuprofen</field><field name="form">tablet</field><field name="strength">400 mg</field><field name="default_dosage">1 tablet</field>
+    </record>
+    <record id="medicine_3" model="dental.medicine">
+        <field name="name">Paracetamol</field><field name="form">tablet</field><field name="strength">500 mg</field><field name="default_dosage">1 tablet</field>
+    </record>
+    <record id="medicine_4" model="dental.medicine">
+        <field name="name">Metronidazole</field><field name="form">tablet</field><field name="strength">400 mg</field><field name="default_dosage">1 tablet</field>
+    </record>
+    <record id="medicine_5" model="dental.medicine">
+        <field name="name">Chlorhexidine Mouthwash</field><field name="form">mouthwash</field><field name="strength">0.2%</field><field name="default_dosage">10 ml rinse</field>
+    </record>
+    <record id="medicine_6" model="dental.medicine">
+        <field name="name">Diclofenac</field><field name="form">tablet</field><field name="strength">50 mg</field><field name="default_dosage">1 tablet</field>
+    </record>
+    <record id="medicine_7" model="dental.medicine">
+        <field name="name">Azithromycin</field><field name="form">tablet</field><field name="strength">500 mg</field><field name="default_dosage">1 tablet</field>
+    </record>
+    <record id="room_1" model="dental.room">
+        <field name="name">Chair 1</field><field name="code">CH1</field>
+    </record>
+    <record id="room_2" model="dental.room">
+        <field name="name">Chair 2</field><field name="code">CH2</field>
+    </record>
+    <record id="room_3" model="dental.room">
+        <field name="name">Chair 3</field><field name="code">CH3</field>
+    </record>
+</odoo>

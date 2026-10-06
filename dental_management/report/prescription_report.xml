@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_report_dental_prescription" model="ir.actions.report">
+        <field name="name">Prescription</field>
+        <field name="model">dental.prescription</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">dental_management.report_prescription_document</field>
+        <field name="report_file">dental_management.report_prescription_document</field>
+        <field name="print_report_name">'Prescription - %s' % object.name</field>
+        <field name="binding_model_id" ref="model_dental_prescription"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="report_prescription_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>Prescription <small t-out="o.name"/></h2>
+                        <div class="row mt-3 mb-3">
+                            <div class="col-6">
+                                <strong>Patient:</strong> <span t-out="o.patient_id.name"/><br/>
+                                <strong>Patient ID:</strong> <span t-out="o.patient_id.code"/><br/>
+                                <strong>Age / Gender:</strong>
+                                <span t-out="o.patient_id.age"/> / <span t-out="o.patient_id.gender"/>
+                            </div>
+                            <div class="col-6 text-end">
+                                <strong>Dentist:</strong> Dr. <span t-out="o.dentist_id.name"/><br/>
+                                <strong>Date:</strong> <span t-field="o.date"/><br/>
+                                <t t-if="o.dentist_id.license_no"><strong>License:</strong> <span t-out="o.dentist_id.license_no"/></t>
+                            </div>
+                        </div>
+                        <p t-if="o.diagnosis"><strong>Diagnosis:</strong> <span t-out="o.diagnosis"/></p>
+                        <p t-if="o.patient_id.allergies" class="text-danger"><strong>Allergies:</strong> <span t-out="o.patient_id.allergies"/></p>
+                        <table class="table table-sm o_main_table">
+                            <thead>
+                                <tr><th>Medicine</th><th>Dosage</th><th>Frequency</th><th>Days</th><th>Timing</th><th>Instructions</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="o.line_ids" t-as="l">
+                                    <td><span t-out="l.medicine_id.name"/></td>
+                                    <td><span t-out="l.dosage"/></td>
+                                    <td><span t-out="dict(l._fields['frequency'].selection).get(l.frequency)"/></td>
+                                    <td><span t-out="l.duration_days"/></td>
+                                    <td><span t-out="dict(l._fields['timing'].selection).get(l.timing)"/></td>
+                                    <td><span t-out="l.instructions"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p t-if="o.notes"><strong>Advice:</strong> <span t-out="o.notes"/></p>
+                        <div class="mt-5 text-end">
+                            <p>_____________________<br/>Dr. <span t-out="o.dentist_id.name"/></p>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
