@@ -1,168 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Dental Management System | SmartDesk Solutions</title>
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Dental Management System | SmartDeskSolutions</title>
 <style>
-body{margin:0;background:#f6f8fb;color:#1c2b3a;font-family:Arial,Helvetica,sans-serif;line-height:1.65}
-.dm-wrap{max-width:1100px;margin:0 auto;padding:22px 12px 46px}
-.dm-card{background:#fff;border:1px solid #e1e8ee;border-radius:16px;margin:0 0 18px;overflow:hidden}
-.dm-pad{padding:30px}
-.dm-center{text-align:center}
-.dm-muted{color:#5f6f7d}
-.dm-title{margin:0;color:#0b1f3a;font-size:38px;line-height:1.15}
-.dm-h2{margin:0 0 10px;color:#0b1f3a;font-size:28px;line-height:1.25}
-.dm-h3{margin:0 0 7px;color:#0b1f3a;font-size:20px}
-.dm-kicker{font-size:11px;font-weight:700;letter-spacing:1.5px;color:#0f766e;text-transform:uppercase}
-.dm-badge{display:inline-block;margin:4px 3px;padding:6px 12px;border-radius:18px;background:#e9f7f4;border:1px solid #c7ebe3;color:#0f766e;font-size:12px;font-weight:700}
-.dm-stat{padding:20px;text-align:center;background:#0b1f3a;color:#fff;border-radius:10px}
-.dm-stat strong{display:block;color:#22d3ee;font-size:27px;margin-bottom:3px}
-.dm-feature{padding:20px;background:#fff;border:1px solid #e1e8ee;border-top:4px solid #14b8a6;border-radius:12px;vertical-align:top}
-.dm-feature strong{display:block;color:#0b1f3a;font-size:17px;margin:0 0 6px}
-.dm-step{padding:18px;background:#f4f8fb;border:1px solid #e1e8ee;border-radius:10px;vertical-align:top}
-.dm-step b{display:inline-block;width:32px;height:32px;line-height:32px;text-align:center;border-radius:50%;background:#0f766e;color:#fff;margin-bottom:8px}
-.dm-path{padding:14px 18px;background:#0b1f3a;color:#fff;border-radius:10px;text-align:center;font-size:13px}
-.dm-tag{display:inline-block;padding:4px 10px;border-radius:12px;background:#e9f7f4;color:#0f766e;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px}
-.dm-shot{display:block;width:100%;max-width:100%;height:auto;border:1px solid #e1e8ee;border-radius:10px}
-.dm-box{background:#f4f8fb;border:1px solid #e1e8ee;border-radius:12px;padding:22px;vertical-align:top}
-.dm-table{width:100%;border-collapse:collapse}
-.dm-table th{background:#0b1f3a;color:#fff;text-align:left;padding:12px 14px;font-size:14px}
-.dm-table td{padding:12px 14px;border:1px solid #e1e8ee;color:#5f6f7d;font-size:14px}
-.dm-table td:first-child{font-weight:700;color:#0b1f3a}
-.dm-btn{display:inline-block;padding:11px 20px;border-radius:8px;background:#f5b94a;color:#3a2a00!important;text-decoration:none;font-weight:700}
-.dm-footer{background:#0b1f3a;color:#fff}
-.dm-footer a{color:#f5d98d;font-weight:700;text-decoration:none}
-.dm-note{font-size:12px;color:#6b7a87;text-align:center;margin-top:18px}
-@media only screen and (max-width:760px){
-  .dm-pad{padding:22px 16px}
-  .dm-title{font-size:30px}
-  .dm-h2{font-size:24px}
-  .dm-mobile-block,.dm-mobile-block tbody,.dm-mobile-block tr,.dm-mobile-block td{display:block!important;width:100%!important}
-  .dm-mobile-block td{box-sizing:border-box;margin-bottom:10px}
-}
-</style>
-</head>
-<body>
-<div class="dm-wrap">
+.dm{--navy:#0b1f3a;--teal:#14b8a6;--teal2:#0f766e;--cyan:#22d3ee;--gold:#f5b94a;--ink:#1c2b3a;--mute:#566878;--line:#e2ebf0;--soft:#f3f8fb;font:16px/1.7 "Segoe UI",system-ui,-apple-system,Roboto,sans-serif;color:var(--ink);max-width:1040px;margin:0 auto;padding:0 16px 48px}
+.dm *{box-sizing:border-box}.dm img{max-width:100%;height:auto}
+.dm .hero{margin:14px 0 0;border-radius:16px;overflow:hidden;box-shadow:0 18px 40px -20px rgba(11,31,58,.6)}.dm .hero img{display:block;width:100%}
+.dm .intro{text-align:center;padding:34px 10px 10px}
+.dm .intro h1{font:800 2.4rem/1.15 Georgia,"Times New Roman",serif;margin:0 0 12px;color:var(--navy)}
+.dm .intro h1 span{color:var(--teal2);background:linear-gradient(90deg,var(--teal2),#2563eb);-webkit-background-clip:text;background-clip:text}@supports((-webkit-background-clip:text) or (background-clip:text)){.dm .intro h1 span{-webkit-text-fill-color:transparent;color:transparent}}
+.dm .intro p{max-width:46em;margin:0 auto 18px;color:var(--mute);font-size:1.1rem}
+.dm .badges span{display:inline-block;margin:4px;padding:5px 14px;border-radius:20px;background:#e6f7f4;color:var(--teal2);font-size:.85rem;font-weight:600;border:1px solid #bfeae3}
+.dm .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:30px 0}
+.dm .stat{background:linear-gradient(135deg,var(--navy),#12395a);color:#fff;border-radius:12px;padding:20px;text-align:center}
+.dm .stat b{display:block;font:800 2rem Georgia,serif;color:var(--cyan)}.dm .stat span{font-size:.9rem;color:#bcd3e0}
+.dm h2{font:800 1.8rem/1.2 Georgia,serif;color:var(--navy);margin:64px 0 6px;text-align:center}
+.dm h2:after{content:"";display:block;width:64px;height:4px;border-radius:2px;margin:12px auto 0;background:linear-gradient(90deg,var(--teal),var(--gold))}
+.dm .sub{text-align:center;color:var(--mute);max-width:42em;margin:12px auto 30px}
+.dm .videobox{background:linear-gradient(135deg,var(--navy),#0f766e);border-radius:18px;padding:18px;box-shadow:0 24px 50px -22px rgba(11,31,58,.7)}
+.dm .videobox video,.dm .videobox img{display:block;width:100%;border-radius:10px;background:#000}
+.dm .videobox p{color:#cfe9e5;text-align:center;margin:12px 0 2px;font-size:.92rem}
+.dm .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.dm .fc{background:#fff;border:1px solid var(--line);border-top:4px solid var(--c);border-radius:12px;padding:22px;box-shadow:0 6px 18px -12px rgba(11,31,58,.35)}
+.dm .ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;font-size:1.4rem;background:#eef6f5;background:color-mix(in srgb,var(--c) 14%,#fff);margin-bottom:10px}
+.dm .fc h4{margin:0 0 4px;font-size:1.05rem;color:var(--navy)}.dm .fc p{margin:0;color:var(--mute);font-size:.93rem}
+.dm .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.dm .st{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:18px;position:relative}
+.dm .st b{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--teal),#2563eb);color:#fff;margin-bottom:8px}
+.dm .st h4{margin:0 0 2px;color:var(--navy)}.dm .st p{margin:0;font-size:.9rem;color:var(--mute)}
+.dm .path{margin-top:16px;background:var(--navy);color:#fff;border-radius:10px;padding:14px 18px;text-align:center;font-size:.93rem}.dm .path i{color:var(--gold);font-style:normal}
+.dm .row{display:grid;grid-template-columns:1fr 1.25fr;gap:34px;align-items:center;margin:0 0 46px}
+.dm .row.rev{grid-template-columns:1.25fr 1fr}.dm .row.rev .txt{order:2}
+.dm .tag{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--teal2);background:#e6f7f4;padding:3px 12px;border-radius:12px}
+.dm .row h3{font:700 1.45rem/1.25 Georgia,serif;margin:10px 0 8px;color:var(--navy)}.dm .row p{margin:0;color:var(--mute)}
+.dm .pic img{display:block;width:100%;border-radius:12px;border:1px solid var(--line);box-shadow:0 18px 36px -18px rgba(11,31,58,.55)}
+.dm .two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.dm .box{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:24px 26px}
+.dm .box h3{margin:0 0 8px;color:var(--navy)}.dm .box ul{margin:0;padding-left:20px;color:var(--mute)}
+.dm table{width:100%;border-collapse:separate;border-spacing:0;border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+.dm th{background:var(--navy);color:#fff;text-align:left;padding:12px 16px}.dm td{padding:12px 16px;border-top:1px solid var(--line);color:var(--mute)}.dm td:first-child{font-weight:700;color:var(--navy);white-space:nowrap}
+.dm a{color:var(--teal2);font-weight:700}
+.dm .btn{display:inline-block;background:var(--gold);color:#3a2a00!important;padding:11px 22px;border-radius:8px;text-decoration:none;margin-top:10px}
+.dm .cta{margin-top:64px;border-radius:18px;padding:52px 36px;text-align:center;color:#fff;background:linear-gradient(rgba(11,31,58,.62),rgba(11,31,58,.62)),url(banner_cta.png) center/cover,#0b1f3a}
+.dm .cta h2{color:#fff;margin:0}.dm .cta p{color:#d3ebe7;max-width:36em;margin:14px auto 6px}.dm .cta a.btn{color:#3a2a00}
+.dm .foot{text-align:center;color:var(--mute);font-size:.9rem;margin-top:26px}
+.dm .box a{overflow-wrap:anywhere}.dm .path{line-height:1.9}
+@media(max-width:960px){.dm .grid{grid-template-columns:1fr 1fr}}
+@media(max-width:800px){.dm .two{grid-template-columns:1fr}.dm .steps,.dm .stats{grid-template-columns:1fr 1fr}.dm .row,.dm .row.rev{grid-template-columns:1fr;gap:18px;margin-bottom:32px}.dm .row.rev .txt{order:0}.dm .intro h1{font-size:1.8rem}.dm h2{font-size:1.5rem;margin-top:48px}.dm td:first-child{white-space:normal}.dm .cta{padding:38px 20px}.dm .videobox{padding:10px}}
+@media(max-width:560px){.dm .grid,.dm .steps,.dm .stats{grid-template-columns:1fr}.dm .intro h1{font-size:1.55rem}}
+</style></head>
+<body><div class="dm">
+<div class="hero"><img src="banner_hero.png" alt="Dental Management System for Odoo 19"/></div>
+<div class="intro"><h1>Run your whole dental clinic in <span>Odoo</span></h1>
+<p>Patients, dental charts, appointments, treatments, invoicing, prescriptions and lab orders in one module, with a live dashboard for the front desk and the owner.</p>
+<div class="badges"><span>Odoo 19</span><span>Community and Enterprise</span><span>LGPL-3</span><span>Email reminders</span><span>Multi-company</span></div></div>
 
-<div class="dm-card">
-  <img src="banner_hero.png" alt="Dental Management System for Odoo 19" style="display:block;width:100%;height:auto;"/>
-  <div class="dm-pad dm-center">
-    <div class="dm-kicker">Odoo 19 · Dental Clinic Management</div>
-    <h1 class="dm-title" style="margin-top:8px;">Run your whole dental clinic in Odoo</h1>
-    <p class="dm-muted" style="max-width:780px;margin:14px auto 18px;font-size:17px;">Patients, dental charts, appointments, treatments, invoicing, prescriptions and lab orders in one module, with a live dashboard for the front desk and clinic management.</p>
-    <span class="dm-badge">Odoo 19</span>
-    <span class="dm-badge">Community &amp; Enterprise</span>
-    <span class="dm-badge">LGPL-3</span>
-    <span class="dm-badge">Email Reminders</span>
-    <span class="dm-badge">Multi-company</span>
-  </div>
-</div>
+<div class="stats"><div class="stat"><b>32</b><span>teeth on the visual chart</span></div><div class="stat"><b>16</b><span>models with chatter</span></div><div class="stat"><b>3</b><span>user roles</span></div><div class="stat"><b>1 click</b><span>treatment to invoice</span></div></div>
 
-<table class="dm-mobile-block" width="100%" cellpadding="7" cellspacing="0" border="0" style="margin-bottom:18px;table-layout:fixed;"><tr>
-<td width="25%"><div class="dm-stat"><strong>32</strong><span>teeth on the visual chart</span></div></td>
-<td width="25%"><div class="dm-stat"><strong>16</strong><span>models with chatter</span></div></td>
-<td width="25%"><div class="dm-stat"><strong>3</strong><span>user roles</span></div></td>
-<td width="25%"><div class="dm-stat"><strong>1 click</strong><span>treatment to invoice</span></div></td>
-</tr></table>
+<h2>Watch the workflow</h2><p class="sub">A 30-second tour from the first booking to the invoice.</p>
+<div class="videobox"><video controls preload="metadata" poster="workflow_poster.png" style="width:100%"><source src="workflow.mp4" type="video/mp4"/><img src="workflow.gif" alt="Workflow animation"/></video><p>Clinic workflow animation in 8 steps</p></div>
 
-<div class="dm-card"><div class="dm-pad dm-center">
-  <div class="dm-kicker">Workflow</div>
-  <h2 class="dm-h2" style="margin-top:6px;">See the clinic workflow</h2>
-  <p class="dm-muted" style="margin:0 auto 20px;max-width:680px;">A quick visual tour from booking through treatment and billing.</p>
-  <img src="workflow.gif" alt="Dental clinic workflow animation" style="display:block;width:100%;max-width:100%;height:auto;border-radius:10px;border:1px solid #e1e8ee;"/>
-</div></div>
+<h2>Key Features</h2><p class="sub">Everything a general or specialist practice needs day to day.</p>
+<div class="grid"><div class="fc" style="--c:#14b8a6"><div class="ic">🧑‍⚕️</div><h4>Patient Records</h4><p>Contacts, blood group, allergies, conditions, medication, insurance and emergency contact in one place.</p></div><div class="fc" style="--c:#3b82f6"><div class="ic">🦷</div><h4>Visual Dental Chart</h4><p>32 teeth in FDI notation coloured by caries, fillings, crowns, root canals, implants and more.</p></div><div class="fc" style="--c:#8b5cf6"><div class="ic">📅</div><h4>Smart Appointments</h4><p>Calendar, kanban, pivot and graph views with chairs, urgent flag and double-booking protection.</p></div><div class="fc" style="--c:#f59e0b"><div class="ic">💳</div><h4>Treatments and Invoicing</h4><p>Per-tooth procedures with discounts and a one-click customer invoice.</p></div><div class="fc" style="--c:#ec4899"><div class="ic">🗂️</div><h4>Treatment Plans</h4><p>Four-phase plans with an estimate that become a treatment when accepted.</p></div><div class="fc" style="--c:#10b981"><div class="ic">💊</div><h4>Prescriptions</h4><p>Medicine library, default dosage and a printable PDF with allergy warning.</p></div><div class="fc" style="--c:#06b6d4"><div class="ic">🔬</div><h4>Lab and X-Rays</h4><p>Track outside lab work and store X-rays and clinical photos per patient and tooth.</p></div><div class="fc" style="--c:#ef4444"><div class="ic">📈</div><h4>Live Dashboard</h4><p>Revenue, outstanding balance, top procedures and dentist workload at a glance.</p></div><div class="fc" style="--c:#64748b"><div class="ic">🔒</div><h4>Roles and Security</h4><p>Receptionist, Dentist and Manager roles plus multi-company rules.</p></div></div>
 
-<div class="dm-card"><div class="dm-pad">
-  <div class="dm-center"><div class="dm-kicker">Core Capabilities</div><h2 class="dm-h2" style="margin-top:6px;">Key Features</h2><p class="dm-muted" style="margin:0 0 24px;">Everything a general or specialist dental practice needs day to day.</p></div>
-  <table class="dm-mobile-block" width="100%" cellpadding="7" cellspacing="0" border="0" style="table-layout:fixed;"><tr>
-    <td width="33%" class="dm-feature"><strong>Patient Records</strong><span class="dm-muted">Contacts, blood group, allergies, conditions, medication, insurance and emergency contact in one place.</span></td>
-    <td width="33%" class="dm-feature" style="border-top-color:#3b82f6;"><strong>Visual Dental Chart</strong><span class="dm-muted">32 teeth in FDI notation coloured by caries, fillings, crowns, root canals, implants and more.</span></td>
-    <td width="33%" class="dm-feature" style="border-top-color:#8b5cf6;"><strong>Smart Appointments</strong><span class="dm-muted">Calendar, kanban, pivot and graph views with chairs, urgent flag and double-booking protection.</span></td>
-  </tr><tr>
-    <td class="dm-feature" style="border-top-color:#f59e0b;"><strong>Treatments &amp; Invoicing</strong><span class="dm-muted">Per-tooth procedures with discounts and one-click customer invoicing.</span></td>
-    <td class="dm-feature" style="border-top-color:#ec4899;"><strong>Treatment Plans</strong><span class="dm-muted">Four-phase plans with an estimate that become a treatment when accepted.</span></td>
-    <td class="dm-feature" style="border-top-color:#10b981;"><strong>Prescriptions</strong><span class="dm-muted">Medicine library, default dosage and a printable PDF with allergy warning.</span></td>
-  </tr><tr>
-    <td class="dm-feature" style="border-top-color:#06b6d4;"><strong>Lab &amp; X-Rays</strong><span class="dm-muted">Track outside lab work and store X-rays and clinical photos per patient and tooth.</span></td>
-    <td class="dm-feature" style="border-top-color:#ef4444;"><strong>Live Dashboard</strong><span class="dm-muted">Revenue, outstanding balance, top procedures and dentist workload at a glance.</span></td>
-    <td class="dm-feature" style="border-top-color:#64748b;"><strong>Roles &amp; Security</strong><span class="dm-muted">Receptionist, Dentist and Manager roles plus multi-company rules.</span></td>
-  </tr></table>
-</div></div>
+<h2>How It Works</h2><p class="sub">The module follows the real visit from booking to follow-up.</p>
+<div class="steps"><div class="st"><b>1</b><h4>Register</h4><p>Add the patient with history, allergies and insurance.</p></div><div class="st"><b>2</b><h4>Book</h4><p>Choose dentist, chair and time. Patient is emailed.</p></div><div class="st"><b>3</b><h4>Check in</h4><p>Move the visit through Checked In and In Progress.</p></div><div class="st"><b>4</b><h4>Plan</h4><p>Propose a phased plan with an estimate.</p></div><div class="st"><b>5</b><h4>Treat</h4><p>Record procedures per tooth; the chart updates.</p></div><div class="st"><b>6</b><h4>Prescribe</h4><p>Print the prescription and send lab work.</p></div><div class="st"><b>7</b><h4>Invoice</h4><p>Create the invoice and collect payment.</p></div><div class="st"><b>8</b><h4>Review</h4><p>Follow results on the dashboard.</p></div></div>
+<div class="path">Appointment: Draft <i>&rarr;</i> Confirmed <i>&rarr;</i> Checked In <i>&rarr;</i> In Progress <i>&rarr;</i> Done &nbsp;|&nbsp; Treatment: Draft <i>&rarr;</i> In Progress <i>&rarr;</i> Completed <i>&rarr;</i> Invoiced</div>
 
-<div class="dm-card"><div class="dm-pad">
-  <div class="dm-center"><div class="dm-kicker">Real Clinic Process</div><h2 class="dm-h2" style="margin-top:6px;">How It Works</h2><p class="dm-muted" style="margin:0 0 24px;">The module follows the real visit from booking to follow-up.</p></div>
-  <table class="dm-mobile-block" width="100%" cellpadding="7" cellspacing="0" border="0" style="table-layout:fixed;"><tr>
-    <td width="25%" class="dm-step"><b>1</b><h3 class="dm-h3">Register</h3><span class="dm-muted">Add the patient with history, allergies and insurance.</span></td>
-    <td width="25%" class="dm-step"><b>2</b><h3 class="dm-h3">Book</h3><span class="dm-muted">Choose dentist, chair and time. Patient is emailed.</span></td>
-    <td width="25%" class="dm-step"><b>3</b><h3 class="dm-h3">Check In</h3><span class="dm-muted">Move the visit through Checked In and In Progress.</span></td>
-    <td width="25%" class="dm-step"><b>4</b><h3 class="dm-h3">Plan</h3><span class="dm-muted">Propose a phased plan with an estimate.</span></td>
-  </tr><tr>
-    <td class="dm-step"><b>5</b><h3 class="dm-h3">Treat</h3><span class="dm-muted">Record procedures per tooth; the chart updates.</span></td>
-    <td class="dm-step"><b>6</b><h3 class="dm-h3">Prescribe</h3><span class="dm-muted">Print the prescription and send lab work.</span></td>
-    <td class="dm-step"><b>7</b><h3 class="dm-h3">Invoice</h3><span class="dm-muted">Create the invoice and collect payment.</span></td>
-    <td class="dm-step"><b>8</b><h3 class="dm-h3">Review</h3><span class="dm-muted">Follow results on the dashboard.</span></td>
-  </tr></table>
-  <div class="dm-path" style="margin-top:16px;">Appointment: Draft &rarr; Confirmed &rarr; Checked In &rarr; In Progress &rarr; Done &nbsp; | &nbsp; Treatment: Draft &rarr; In Progress &rarr; Completed &rarr; Invoiced</div>
-</div></div>
+<h2>Business Benefits</h2><p class="sub">For single-dentist practices, multi-chair clinics, specialists and clinic groups.</p>
+<div class="two"><div class="box"><h3>Perfect for</h3><ul><li>Practices moving off paper records</li><li>Clinics with several dentists and chairs</li><li>Orthodontic, implant and cosmetic specialists</li><li>Pediatric dentistry</li><li>Multi-branch clinic groups</li></ul></div>
+<div class="box"><h3>What you gain</h3><ul><li>Fewer missed visits through reminders</li><li>No double bookings</li><li>Faster, error-free billing</li><li>Complete clinical history in one record</li><li>Clear view of revenue and unpaid invoices</li></ul></div></div>
 
-<div class="dm-card"><div class="dm-pad">
-  <div class="dm-center"><div class="dm-kicker">Value</div><h2 class="dm-h2" style="margin-top:6px;">Business Benefits</h2><p class="dm-muted" style="margin:0 0 24px;">Designed for single-dentist practices, multi-chair clinics, specialists and clinic groups.</p></div>
-  <table class="dm-mobile-block" width="100%" cellpadding="8" cellspacing="0" border="0"><tr>
-    <td width="50%" class="dm-box"><h3 class="dm-h3">Perfect for</h3><ul style="margin:8px 0 0;padding-left:20px;color:#5f6f7d;"><li>Practices moving off paper records</li><li>Clinics with several dentists and chairs</li><li>Orthodontic, implant and cosmetic specialists</li><li>Pediatric dentistry</li><li>Multi-branch clinic groups</li></ul></td>
-    <td width="50%" class="dm-box"><h3 class="dm-h3">What you gain</h3><ul style="margin:8px 0 0;padding-left:20px;color:#5f6f7d;"><li>Fewer missed visits through reminders</li><li>No double bookings</li><li>Faster, consistent billing</li><li>Complete clinical history in one record</li><li>Clear view of revenue and unpaid invoices</li></ul></td>
-  </tr></table>
-</div></div>
+<h2>Module Screenshots</h2><p class="sub">The screens your team will use every day.</p>
+<div class="row"><div class="txt"><span class="tag">Dashboard</span><h3>Clinic Dashboard</h3><p>Eight KPI cards show patients, appointments today, the next seven days, open treatments, revenue, outstanding invoices, open plans and lab orders waiting. Today's schedule, six-month revenue, status mix and dentist workload sit below, and every card opens its list.</p></div><div class="pic"><img src="01_dashboard.png" alt="Clinic Dashboard" loading="lazy"/></div></div><div class="row rev"><div class="txt"><span class="tag">Patients</span><h3>Patient Record and Dental Chart</h3><p>One record per patient with contact details, medical history, insurance and smart buttons. Allergies show in a red banner. The chart shows all 32 teeth in FDI notation, coloured by the latest condition.</p></div><div class="pic"><img src="03_dental_chart.png" alt="Patient Record and Dental Chart" loading="lazy"/></div></div><div class="row"><div class="txt"><span class="tag">Scheduling</span><h3>Appointment Calendar</h3><p>A week calendar with a colour for each status. Open any booking with one click. The same data is also available as list, kanban, pivot and graph views.</p></div><div class="pic"><img src="04_appointment_calendar.png" alt="Appointment Calendar" loading="lazy"/></div></div><div class="row rev"><div class="txt"><span class="tag">Scheduling</span><h3>Appointment Workflow</h3><p>Move each visit through Draft, Confirmed, Checked In, In Progress and Done. Overlapping bookings for the same dentist or chair are blocked, and confirming emails the patient.</p></div><div class="pic"><img src="05_appointment_form.png" alt="Appointment Workflow" loading="lazy"/></div></div><div class="row"><div class="txt"><span class="tag">Clinical</span><h3>Treatment and Invoicing</h3><p>Record procedure, tooth, surface, quantity, price and discount. Set Chart Status After and the chart updates on completion. Create Invoice makes the customer invoice in one click.</p></div><div class="pic"><img src="06_treatment.png" alt="Treatment and Invoicing" loading="lazy"/></div></div><div class="row rev"><div class="txt"><span class="tag">Clinical</span><h3>Treatment Plans</h3><p>Plan bigger cases in four phases with a total estimate. When the patient accepts, Start Treatment copies every line into a new treatment.</p></div><div class="pic"><img src="07_treatment_plan.png" alt="Treatment Plans" loading="lazy"/></div></div><div class="row"><div class="txt"><span class="tag">Clinical</span><h3>Prescription PDF</h3><p>Pick medicines with default dosage, then print a clean PDF with diagnosis, allergy warning and a signature line.</p></div><div class="pic"><img src="08_prescription_pdf.png" alt="Prescription PDF" loading="lazy"/></div></div><div class="row rev"><div class="txt"><span class="tag">Clinical</span><h3>Dental Lab Orders</h3><p>Track crowns, bridges, dentures and aligners from Draft to Sent, Received and Fitted, with shade, due date and cost.</p></div><div class="pic"><img src="09_lab_order.png" alt="Dental Lab Orders" loading="lazy"/></div></div><div class="row"><div class="txt"><span class="tag">Setup</span><h3>Procedure Catalogue</h3><p>Keep one price list with code, category, duration and price. Sample procedures, medicines and chairs are installed with the module.</p></div><div class="pic"><img src="10_procedures.png" alt="Procedure Catalogue" loading="lazy"/></div></div>
 
-<div class="dm-card"><div class="dm-pad">
-  <div class="dm-center"><div class="dm-kicker">Screenshots</div><h2 class="dm-h2" style="margin-top:6px;">Module Screenshots</h2><p class="dm-muted" style="margin:0 0 28px;">The screens your team will use every day.</p></div>
+<h2>User Roles</h2><p class="sub">Assign one role per user. Higher roles include the lower ones.</p>
+<table><tr><th>Role</th><th>Access</th></tr>
+<tr><td>Receptionist</td><td>Patients, appointments, view treatments and create invoices.</td></tr>
+<tr><td>Dentist</td><td>Everything above plus charts, treatments, plans, prescriptions, X-rays and lab orders.</td></tr>
+<tr><td>Manager</td><td>Full access and the Configuration menu for dentists, procedures, medicines and chairs.</td></tr></table>
 
-  <table class="dm-mobile-block" width="100%" cellpadding="10" cellspacing="0" border="0" style="margin-bottom:28px;"><tr><td width="38%" style="vertical-align:middle;"><span class="dm-tag">Dashboard</span><h3 class="dm-h3" style="margin-top:10px;">Clinic Dashboard</h3><p class="dm-muted">Eight KPI cards show patients, appointments today, the next seven days, open treatments, revenue, outstanding invoices, open plans and lab orders waiting. Today's schedule, revenue, status mix and dentist workload sit below.</p></td><td width="62%"><img class="dm-shot" src="01_dashboard.png" alt="Clinic Dashboard"/></td></tr></table>
+<h2>Custom Development and Version Support</h2><p class="sub">We can adapt the module to your Odoo version or add features such as insurance claims, patient portal booking, SMS reminders and custom reports.</p>
+<div style="text-align:center"><a class="btn" href="mailto:info@smartdesksolutions.com">Request custom development</a></div>
 
-  <table class="dm-mobile-block" width="100%" cellpadding="10" cellspacing="0" border="0" style="margin-bottom:28px;"><tr><td width="62%"><img class="dm-shot" src="03_dental_chart.png" alt="Patient Record and Dental Chart"/></td><td width="38%" style="vertical-align:middle;"><span class="dm-tag">Patients</span><h3 class="dm-h3" style="margin-top:10px;">Patient Record &amp; Dental Chart</h3><p class="dm-muted">One record per patient with contact details, medical history, insurance and smart buttons. Allergies show in a warning banner, while all 32 teeth use FDI notation and colour by latest condition.</p></td></tr></table>
+<h2>Support and Contact</h2><p class="sub">Bug reports, installation help and usage guidance.</p>
+<div class="two"><div class="box"><h3>Email</h3><a href="mailto:info@smartdesksolutions.com">info@smartdesksolutions.com</a></div><div class="box"><h3>Website</h3><a href="https://www.smartdesksolutions.com">www.smartdesksolutions.com</a></div></div>
 
-  <table class="dm-mobile-block" width="100%" cellpadding="10" cellspacing="0" border="0" style="margin-bottom:28px;"><tr><td width="38%" style="vertical-align:middle;"><span class="dm-tag">Scheduling</span><h3 class="dm-h3" style="margin-top:10px;">Appointment Calendar</h3><p class="dm-muted">A week calendar with a colour for each status. Open any booking with one click. The same data is also available as list, kanban, pivot and graph views.</p></td><td width="62%"><img class="dm-shot" src="04_appointment_calendar.png" alt="Appointment Calendar"/></td></tr></table>
-
-  <table class="dm-mobile-block" width="100%" cellpadding="10" cellspacing="0" border="0" style="margin-bottom:28px;"><tr><td width="62%"><img class="dm-shot" src="05_appointment_form.png" alt="Appointment Workflow"/></td><td width="38%" style="vertical-align:middle;"><span class="dm-tag">Scheduling</span><h3 class="dm-h3" style="margin-top:10px;">Appointment Workflow</h3><p class="dm-muted">Move each visit through Draft, Confirmed, Checked In, In Progress and Done. Overlapping bookings for the same dentist or chair are blocked, and confirming emails the patient.</p></td></tr></table>
-
-  <table class="dm-mobile-block" width="100%" cellpadding="10" cellspacing="0" border="0" style="margin-bottom:28px;"><tr><td width="38%" style="vertical-align:middle;"><span class="dm-tag">Clinical</span><h3 class="dm-h3" style="margin-top:10px;">Treatment &amp; Invoicing</h3><p class="dm-muted">Record procedure, tooth, surface, quantity, price and discount. Set Chart Status After and the chart updates on completion. Create Invoice makes the customer invoice in one click.</p></td><td width="62%"><img class="dm-shot" src="06_treatment.png" alt="Treatment and Invoicing"/></td></tr></table>
-
-  <table class="dm-mobile-block" width="100%" cellpadding="10" cellspacing="0" border="0" style="margin-bottom:28px;"><tr><td width="62%"><img class="dm-shot" src="07_treatment_plan.png" alt="Treatment Plans"/></td><td width="38%" style="vertical-align:middle;"><span class="dm-tag">Clinical</span><h3 class="dm-h3" style="margin-top:10px;">Treatment Plans</h3><p class="dm-muted">Plan bigger cases in four phases with a total estimate. When the patient accepts, Start Treatment copies every line into a new treatment.</p></td></tr></table>
-
-  <table class="dm-mobile-block" width="100%" cellpadding="10" cellspacing="0" border="0" style="margin-bottom:28px;"><tr><td width="38%" style="vertical-align:middle;"><span class="dm-tag">Clinical</span><h3 class="dm-h3" style="margin-top:10px;">Prescription PDF</h3><p class="dm-muted">Pick medicines with default dosage, then print a clean PDF with diagnosis, allergy warning and a signature line.</p></td><td width="62%"><img class="dm-shot" src="08_prescription_pdf.png" alt="Prescription PDF"/></td></tr></table>
-
-  <table class="dm-mobile-block" width="100%" cellpadding="10" cellspacing="0" border="0" style="margin-bottom:28px;"><tr><td width="62%"><img class="dm-shot" src="09_lab_order.png" alt="Dental Lab Orders"/></td><td width="38%" style="vertical-align:middle;"><span class="dm-tag">Clinical</span><h3 class="dm-h3" style="margin-top:10px;">Dental Lab Orders</h3><p class="dm-muted">Track crowns, bridges, dentures and aligners from Draft to Sent, Received and Fitted, with shade, due date and cost.</p></td></tr></table>
-
-  <table class="dm-mobile-block" width="100%" cellpadding="10" cellspacing="0" border="0"><tr><td width="38%" style="vertical-align:middle;"><span class="dm-tag">Setup</span><h3 class="dm-h3" style="margin-top:10px;">Procedure Catalogue</h3><p class="dm-muted">Keep one price list with code, category, duration and price. Sample procedures, medicines and chairs are installed with the module.</p></td><td width="62%"><img class="dm-shot" src="10_procedures.png" alt="Procedure Catalogue"/></td></tr></table>
-</div></div>
-
-<div class="dm-card"><div class="dm-pad">
-  <div class="dm-center"><div class="dm-kicker">Security</div><h2 class="dm-h2" style="margin-top:6px;">User Roles</h2><p class="dm-muted" style="margin:0 0 20px;">Assign one role per user. Higher roles include the lower ones.</p></div>
-  <table class="dm-table">
-    <tr><th>Role</th><th>Access</th></tr>
-    <tr><td>Receptionist</td><td>Patients, appointments, view treatments and create invoices.</td></tr>
-    <tr><td>Dentist</td><td>Everything above plus charts, treatments, plans, prescriptions, X-rays and lab orders.</td></tr>
-    <tr><td>Manager</td><td>Full access and the Configuration menu for dentists, procedures, medicines and chairs.</td></tr>
-  </table>
-</div></div>
-
-<div class="dm-card"><div class="dm-pad dm-center">
-  <div class="dm-kicker">Development Services</div>
-  <h2 class="dm-h2" style="margin-top:6px;">Custom Development &amp; Version Support</h2>
-  <p class="dm-muted" style="max-width:760px;margin:0 auto 18px;">We can adapt the module to your Odoo version or add features such as insurance claims, patient portal booking, SMS reminders and custom reports.</p>
-  <a class="dm-btn" href="mailto:info@smartdesksolutions.com">Request custom development</a>
-</div></div>
-
-<div class="dm-card dm-footer"><div class="dm-pad">
-  <table class="dm-mobile-block" width="100%" cellpadding="8" cellspacing="0" border="0"><tr>
-    <td width="58%" style="vertical-align:middle;color:#fff;"><div class="dm-kicker" style="color:#72e2d5;">SmartDesk Solutions</div><h2 style="margin:7px 0 8px;color:#fff;font-size:28px;">Support &amp; Contact</h2><p style="margin:0;color:#c9d5df;">Bug reports, installation help, customization and usage guidance.</p></td>
-    <td width="42%" style="vertical-align:middle;color:#fff;"><strong>Email:</strong> <a href="mailto:info@smartdesksolutions.com">info@smartdesksolutions.com</a><br/><strong>Website:</strong> <a href="https://www.smartdesksolutions.com">www.smartdesksolutions.com</a></td>
-  </tr></table>
-</div></div>
-
-<div class="dm-note">Developed by SmartDesk Solutions &nbsp;|&nbsp; Technical name: <strong>smartdesk_dental_management</strong> &nbsp;|&nbsp; License: LGPL-3</div>
-
-</div>
-</body>
-</html>
+<div class="cta"><h2>Ready to modernise your dental clinic?</h2><p>Install the module, add your dentists and book your first patient in minutes.</p><a class="btn" href="mailto:info@smartdesksolutions.com">Get in touch</a></div>
+<div class="foot">Developed by SmartDeskSolutions | Technical name: dental_management | License: LGPL-3</div>
+</div></body></html>
