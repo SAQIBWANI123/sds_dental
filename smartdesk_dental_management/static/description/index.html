@@ -1,95 +1,608 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Dental Management System | SmartDeskSolutions</title>
 <style>
-.dm{--navy:#0b1f3a;--teal:#14b8a6;--teal2:#0f766e;--cyan:#22d3ee;--gold:#f5b94a;--ink:#1c2b3a;--mute:#566878;--line:#e2ebf0;--soft:#f3f8fb;font:16px/1.7 "Segoe UI",system-ui,-apple-system,Roboto,sans-serif;color:var(--ink);max-width:1040px;margin:0 auto;padding:0 16px 48px}
-.dm *{box-sizing:border-box}.dm img{max-width:100%;height:auto}
-.dm .hero{margin:14px 0 0;border-radius:16px;overflow:hidden;box-shadow:0 18px 40px -20px rgba(11,31,58,.6)}.dm .hero img{display:block;width:100%}
-.dm .intro{text-align:center;padding:34px 10px 10px}
-.dm .intro h1{font:800 2.4rem/1.15 Georgia,"Times New Roman",serif;margin:0 0 12px;color:var(--navy)}
-.dm .intro h1 span{color:var(--teal2);background:linear-gradient(90deg,var(--teal2),#2563eb);-webkit-background-clip:text;background-clip:text}@supports((-webkit-background-clip:text) or (background-clip:text)){.dm .intro h1 span{-webkit-text-fill-color:transparent;color:transparent}}
-.dm .intro p{max-width:46em;margin:0 auto 18px;color:var(--mute);font-size:1.1rem}
-.dm .badges span{display:inline-block;margin:4px;padding:5px 14px;border-radius:20px;background:#e6f7f4;color:var(--teal2);font-size:.85rem;font-weight:600;border:1px solid #bfeae3}
-.dm .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:30px 0}
-.dm .stat{background:linear-gradient(135deg,var(--navy),#12395a);color:#fff;border-radius:12px;padding:20px;text-align:center}
-.dm .stat b{display:block;font:800 2rem Georgia,serif;color:var(--cyan)}.dm .stat span{font-size:.9rem;color:#bcd3e0}
-.dm h2{font:800 1.8rem/1.2 Georgia,serif;color:var(--navy);margin:64px 0 6px;text-align:center}
-.dm h2:after{content:"";display:block;width:64px;height:4px;border-radius:2px;margin:12px auto 0;background:linear-gradient(90deg,var(--teal),var(--gold))}
-.dm .sub{text-align:center;color:var(--mute);max-width:42em;margin:12px auto 30px}
-.dm .videobox{background:linear-gradient(135deg,var(--navy),#0f766e);border-radius:18px;padding:18px;box-shadow:0 24px 50px -22px rgba(11,31,58,.7)}
-.dm .videobox video,.dm .videobox img{display:block;width:100%;border-radius:10px;background:#000}
-.dm .videobox p{color:#cfe9e5;text-align:center;margin:12px 0 2px;font-size:.92rem}
-.dm .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.dm .fc{background:#fff;border:1px solid var(--line);border-top:4px solid var(--c);border-radius:12px;padding:22px;box-shadow:0 6px 18px -12px rgba(11,31,58,.35)}
-.dm .ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;font-size:1.4rem;background:#eef6f5;background:color-mix(in srgb,var(--c) 14%,#fff);margin-bottom:10px}
-.dm .fc h4{margin:0 0 4px;font-size:1.05rem;color:var(--navy)}.dm .fc p{margin:0;color:var(--mute);font-size:.93rem}
-.dm .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
-.dm .st{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:18px;position:relative}
-.dm .st b{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--teal),#2563eb);color:#fff;margin-bottom:8px}
-.dm .st h4{margin:0 0 2px;color:var(--navy)}.dm .st p{margin:0;font-size:.9rem;color:var(--mute)}
-.dm .path{margin-top:16px;background:var(--navy);color:#fff;border-radius:10px;padding:14px 18px;text-align:center;font-size:.93rem}.dm .path i{color:var(--gold);font-style:normal}
-.dm .row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:34px;align-items:center;margin:0 0 46px}
-.dm .row.rev{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)}.dm .row.rev .txt{order:2}
-.dm .tag{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--teal2);background:#e6f7f4;padding:3px 12px;border-radius:12px}
-.dm .row h3{font:700 1.45rem/1.25 Georgia,serif;margin:10px 0 8px;color:var(--navy)}.dm .row p{margin:0;color:var(--mute)}
-.dm .pic img{display:block;width:100%;border-radius:12px;border:1px solid var(--line);box-shadow:0 18px 36px -18px rgba(11,31,58,.55)}
-.dm .two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px}
-.dm .box{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:24px 26px}
-.dm .box h3{margin:0 0 8px;color:var(--navy)}.dm .box ul{margin:0;padding-left:20px;color:var(--mute)}
-.dm table{width:100%;border-collapse:separate;border-spacing:0;border-radius:12px;overflow:hidden;border:1px solid var(--line)}
-.dm th{background:var(--navy);color:#fff;text-align:left;padding:12px 16px}.dm td{padding:12px 16px;border-top:1px solid var(--line);color:var(--mute)}.dm td:first-child{font-weight:700;color:var(--navy);white-space:nowrap}
-.dm a{color:var(--teal2);font-weight:700}
-.dm .btn{display:inline-block;background:var(--gold);color:#3a2a00!important;padding:11px 22px;border-radius:8px;text-decoration:none;margin-top:10px}
-.dm .cta{margin-top:64px;border-radius:18px;padding:52px 36px;text-align:center;color:#fff;background:linear-gradient(rgba(11,31,58,.62),rgba(11,31,58,.62)),url(banner_cta.png) center/cover,#0b1f3a}
-.dm .cta h2{color:#fff;margin:0}.dm .cta p{color:#d3ebe7;max-width:36em;margin:14px auto 6px}.dm .cta a.btn{color:#3a2a00}
-.dm .foot{text-align:center;color:var(--mute);font-size:.9rem;margin-top:26px}
-.dm{--hero-ratio:16/6;--shot-ratio:16/10;overflow-x:clip}
-.dm .txt,.dm .pic,.dm .fc,.dm .st,.dm .box{min-width:0}
-.dm .hero img{aspect-ratio:var(--hero-ratio);object-fit:contain;background:var(--navy)}
-.dm .pic img{aspect-ratio:var(--shot-ratio);object-fit:contain;background:var(--soft)}
-.dm .videobox video,.dm .videobox img{aspect-ratio:16/9;object-fit:contain}
-.dm .box a{overflow-wrap:anywhere}.dm .path{line-height:1.9}
-@media(max-width:960px){.dm .grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
-@media(max-width:800px){.dm .two{grid-template-columns:minmax(0,1fr)}.dm .steps,.dm .stats{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.dm .row,.dm .row.rev{grid-template-columns:minmax(0,1fr);gap:18px;margin-bottom:32px}.dm .row.rev .txt{order:0}.dm .intro h1{font-size:1.8rem}.dm h2{font-size:1.5rem;margin-top:48px}.dm td:first-child{white-space:normal}.dm .cta{padding:38px 20px}.dm .videobox{padding:10px}}
-@media(max-width:560px){.dm .grid,.dm .steps,.dm .stats{grid-template-columns:minmax(0,1fr)}.dm .intro h1{font-size:1.55rem}}
+/* ==========================================================
+   Odoo Apps Store description styles
+   Scoped to .dm so Odoo page styles are not affected.
+   Content, images, links and HTML structure are unchanged.
+   ========================================================== */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #ffffff !important;
+}
+
+.dm, .dm * {
+    box-sizing: border-box;
+}
+
+.dm {
+    width: 100%;
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 16px 18px 48px;
+    background: #ffffff;
+    color: #243447;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    overflow: hidden;
+}
+
+.dm img,
+.dm video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Hero */
+.dm .hero {
+    margin: 0 0 8px;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #e4eaf0;
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(20, 40, 70, 0.10);
+}
+
+.dm .hero img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* Intro */
+.dm .intro {
+    padding: 34px 14px 16px;
+    text-align: center;
+}
+
+.dm .intro h1 {
+    margin: 0 0 12px;
+    color: #0b1f3a;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.dm .intro h1 span {
+    color: #0f766e;
+}
+
+.dm .intro p {
+    max-width: 760px;
+    margin: 0 auto 18px;
+    color: #5d6d7e;
+    font-size: 18px;
+}
+
+.dm .badges {
+    margin-top: 4px;
+    text-align: center;
+}
+
+.dm .badges span {
+    display: inline-block;
+    margin: 4px;
+    padding: 6px 13px;
+    border: 1px solid #cfe8e4;
+    border-radius: 18px;
+    background: #f2fbf9;
+    color: #0f766e;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+/* Statistics */
+.dm .stats {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 24px -7px 12px;
+}
+
+.dm .stat {
+    width: calc(25% - 14px);
+    min-height: 112px;
+    margin: 7px;
+    padding: 20px 12px;
+    border-radius: 12px;
+    background: #0b1f3a;
+    color: #ffffff;
+    text-align: center;
+    box-shadow: 0 6px 16px rgba(11, 31, 58, 0.10);
+}
+
+.dm .stat b {
+    display: block;
+    margin-bottom: 4px;
+    color: #67e8f9;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.dm .stat span {
+    display: block;
+    color: #d9e8f2;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* Section headings */
+.dm h2 {
+    margin: 62px 0 8px;
+    color: #0b1f3a;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 29px;
+    font-weight: 700;
+    line-height: 1.25;
+    text-align: center;
+}
+
+.dm h2:after {
+    content: "";
+    display: block;
+    width: 62px;
+    height: 3px;
+    margin: 12px auto 0;
+    border-radius: 2px;
+    background: #14b8a6;
+}
+
+.dm .sub {
+    max-width: 700px;
+    margin: 10px auto 28px;
+    color: #687789;
+    text-align: center;
+}
+
+/* Workflow video */
+.dm .videobox {
+    padding: 14px;
+    border: 1px solid #dce6ee;
+    border-radius: 14px;
+    background: #0b1f3a;
+    box-shadow: 0 8px 24px rgba(11, 31, 58, 0.12);
+}
+
+.dm .videobox video,
+.dm .videobox img {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    border: 0;
+    border-radius: 9px;
+    background: #000000;
+}
+
+.dm .videobox p {
+    margin: 10px 0 0;
+    color: #d7ebe8;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Feature cards */
+.dm .grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -8px;
+}
+
+.dm .fc {
+    width: calc(33.333% - 16px);
+    min-height: 205px;
+    margin: 8px;
+    padding: 21px;
+    border: 1px solid #e1e8ee;
+    border-top: 4px solid #14b8a6;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 4px 14px rgba(20, 40, 70, 0.06);
+}
+
+.dm .fc:nth-child(2) { border-top-color: #3b82f6; }
+.dm .fc:nth-child(3) { border-top-color: #8b5cf6; }
+.dm .fc:nth-child(4) { border-top-color: #f59e0b; }
+.dm .fc:nth-child(5) { border-top-color: #ec4899; }
+.dm .fc:nth-child(6) { border-top-color: #10b981; }
+.dm .fc:nth-child(7) { border-top-color: #06b6d4; }
+.dm .fc:nth-child(8) { border-top-color: #ef4444; }
+.dm .fc:nth-child(9) { border-top-color: #64748b; }
+
+.dm .ic {
+    display: block;
+    width: 46px;
+    height: 46px;
+    margin: 0 0 12px;
+    padding: 8px 0 0;
+    border-radius: 10px;
+    background: #f1f7f7;
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.dm .fc h4 {
+    margin: 0 0 7px;
+    color: #0b1f3a;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.dm .fc p {
+    margin: 0;
+    color: #617080;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Steps */
+.dm .steps {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -7px;
+}
+
+.dm .st {
+    width: calc(25% - 14px);
+    min-height: 160px;
+    margin: 7px;
+    padding: 18px;
+    border: 1px solid #e1e8ee;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 3px 12px rgba(20, 40, 70, 0.04);
+}
+
+.dm .st b {
+    display: block;
+    width: 34px;
+    height: 34px;
+    margin-bottom: 10px;
+    padding-top: 5px;
+    border-radius: 50%;
+    background: #14b8a6;
+    color: #ffffff;
+    font-size: 15px;
+    line-height: 24px;
+    text-align: center;
+}
+
+.dm .st h4 {
+    margin: 0 0 5px;
+    color: #0b1f3a;
+    font-size: 16px;
+}
+
+.dm .st p {
+    margin: 0;
+    color: #657486;
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+.dm .path {
+    margin-top: 18px;
+    padding: 14px 18px;
+    border-radius: 10px;
+    background: #0b1f3a;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.dm .path i {
+    color: #f5b94a;
+    font-style: normal;
+}
+
+/* Screenshot rows */
+.dm .row {
+    display: flex;
+    align-items: center;
+    margin: 0 -16px 50px;
+}
+
+.dm .row .txt,
+.dm .row .pic {
+    width: 50%;
+    min-width: 0;
+    padding: 0 16px;
+}
+
+.dm .row.rev .txt {
+    order: 2;
+}
+
+.dm .row.rev .pic {
+    order: 1;
+}
+
+.dm .tag {
+    display: inline-block;
+    padding: 4px 11px;
+    border: 1px solid #cfe8e4;
+    border-radius: 14px;
+    background: #f2fbf9;
+    color: #0f766e;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.dm .row h3 {
+    margin: 10px 0 8px;
+    color: #0b1f3a;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.dm .row p {
+    margin: 0;
+    color: #617080;
+}
+
+.dm .pic {
+    text-align: center;
+}
+
+.dm .pic img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border: 1px solid #dfe7ee;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 8px 22px rgba(20, 40, 70, 0.10);
+}
+
+/* Two-column information boxes */
+.dm .two {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -9px;
+}
+
+.dm .box {
+    width: calc(50% - 18px);
+    margin: 9px;
+    padding: 24px 25px;
+    border: 1px solid #e1e8ee;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 3px 12px rgba(20, 40, 70, 0.04);
+}
+
+.dm .box h3 {
+    margin: 0 0 9px;
+    color: #0b1f3a;
+    font-size: 20px;
+}
+
+.dm .box ul {
+    margin: 0;
+    padding-left: 20px;
+    color: #617080;
+}
+
+.dm .box li {
+    margin-bottom: 5px;
+}
+
+/* Table */
+.dm table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #dfe7ee;
+    background: #ffffff;
+}
+
+.dm th {
+    padding: 13px 15px;
+    border: 1px solid #0b1f3a;
+    background: #0b1f3a;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: left;
+}
+
+.dm td {
+    padding: 13px 15px;
+    border: 1px solid #e1e8ee;
+    color: #617080;
+    vertical-align: top;
+}
+
+.dm td:first-child {
+    color: #0b1f3a;
+    font-weight: 700;
+}
+
+/* Links and buttons */
+.dm a {
+    color: #0f766e;
+    font-weight: 700;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.dm .btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 11px 21px;
+    border-radius: 8px;
+    background: #f5b94a;
+    color: #3a2a00 !important;
+    font-weight: 700;
+    line-height: 1.4;
+    text-decoration: none;
+}
+
+/* CTA */
+.dm .cta {
+    margin-top: 62px;
+    padding: 46px 30px;
+    border-radius: 14px;
+    background: #0b1f3a url('banner_cta.png') center center / cover no-repeat;
+    color: #ffffff;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(11, 31, 58, 0.12);
+}
+
+.dm .cta h2 {
+    margin: 0;
+    color: #ffffff;
+}
+
+.dm .cta h2:after {
+    background: #f5b94a;
+}
+
+.dm .cta p {
+    max-width: 620px;
+    margin: 14px auto 6px;
+    color: #e5f0f4;
+}
+
+.dm .foot {
+    margin-top: 26px;
+    color: #728091;
+    font-size: 13px;
+    text-align: center;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .dm .fc {
+        width: calc(50% - 16px);
+    }
+
+    .dm .stat,
+    .dm .st {
+        width: calc(50% - 14px);
+    }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+    .dm {
+        padding: 10px 12px 36px;
+        font-size: 15px;
+    }
+
+    .dm .intro {
+        padding: 26px 5px 12px;
+    }
+
+    .dm .intro h1 {
+        font-size: 29px;
+    }
+
+    .dm .intro p {
+        font-size: 16px;
+    }
+
+    .dm h2 {
+        margin-top: 46px;
+        font-size: 25px;
+    }
+
+    .dm .row,
+    .dm .row.rev {
+        display: block;
+        margin: 0 0 38px;
+    }
+
+    .dm .row .txt,
+    .dm .row .pic {
+        width: 100%;
+        padding: 0;
+    }
+
+    .dm .row .pic {
+        margin-top: 18px;
+    }
+
+    .dm .row.rev .txt,
+    .dm .row.rev .pic {
+        order: initial;
+    }
+
+    .dm .box {
+        width: calc(100% - 18px);
+    }
+
+    .dm .cta {
+        padding: 36px 18px;
+    }
+}
+
+@media (max-width: 520px) {
+    .dm .stat,
+    .dm .fc,
+    .dm .st {
+        width: calc(100% - 14px);
+        min-height: 0;
+    }
+
+    .dm .fc {
+        width: calc(100% - 16px);
+    }
+
+    .dm table {
+        font-size: 13px;
+    }
+
+    .dm th,
+    .dm td {
+        padding: 10px 9px;
+    }
+}
 </style></head>
 <body><div class="dm">
-<div class="hero"><img src="banner_hero.png" alt="Dental Management System for Odoo 19"/></div>
+<div class="hero"><img alt="Dental Management System for Odoo 19" src="banner_hero.png"/></div>
 <div class="intro"><h1>Run your whole dental clinic in <span>Odoo</span></h1>
 <p>Patients, dental charts, appointments, treatments, invoicing, prescriptions and lab orders in one module, with a live dashboard for the front desk and the owner.</p>
 <div class="badges"><span>Odoo 19</span><span>Community and Enterprise</span><span>LGPL-3</span><span>Email reminders</span><span>Multi-company</span></div></div>
-
 <div class="stats"><div class="stat"><b>32</b><span>teeth on the visual chart</span></div><div class="stat"><b>16</b><span>models with chatter</span></div><div class="stat"><b>3</b><span>user roles</span></div><div class="stat"><b>1 click</b><span>treatment to invoice</span></div></div>
-
 <h2>Watch the workflow</h2><p class="sub">A 30-second tour from the first booking to the invoice.</p>
-<div class="videobox"><video controls preload="metadata" poster="workflow_poster.png" style="width:100%"><source src="workflow.mp4" type="video/mp4"/><img src="workflow.gif" alt="Workflow animation"/></video><p>Clinic workflow animation in 8 steps</p></div>
-
+<div class="videobox"><video controls="" poster="workflow_poster.png" preload="metadata" style="width:100%"><source src="workflow.mp4" type="video/mp4"/><img alt="Workflow animation" src="workflow.gif"/></video><p>Clinic workflow animation in 8 steps</p></div>
 <h2>Key Features</h2><p class="sub">Everything a general or specialist practice needs day to day.</p>
 <div class="grid"><div class="fc" style="--c:#14b8a6"><div class="ic">🧑‍⚕️</div><h4>Patient Records</h4><p>Contacts, blood group, allergies, conditions, medication, insurance and emergency contact in one place.</p></div><div class="fc" style="--c:#3b82f6"><div class="ic">🦷</div><h4>Visual Dental Chart</h4><p>32 teeth in FDI notation coloured by caries, fillings, crowns, root canals, implants and more.</p></div><div class="fc" style="--c:#8b5cf6"><div class="ic">📅</div><h4>Smart Appointments</h4><p>Calendar, kanban, pivot and graph views with chairs, urgent flag and double-booking protection.</p></div><div class="fc" style="--c:#f59e0b"><div class="ic">💳</div><h4>Treatments and Invoicing</h4><p>Per-tooth procedures with discounts and a one-click customer invoice.</p></div><div class="fc" style="--c:#ec4899"><div class="ic">🗂️</div><h4>Treatment Plans</h4><p>Four-phase plans with an estimate that become a treatment when accepted.</p></div><div class="fc" style="--c:#10b981"><div class="ic">💊</div><h4>Prescriptions</h4><p>Medicine library, default dosage and a printable PDF with allergy warning.</p></div><div class="fc" style="--c:#06b6d4"><div class="ic">🔬</div><h4>Lab and X-Rays</h4><p>Track outside lab work and store X-rays and clinical photos per patient and tooth.</p></div><div class="fc" style="--c:#ef4444"><div class="ic">📈</div><h4>Live Dashboard</h4><p>Revenue, outstanding balance, top procedures and dentist workload at a glance.</p></div><div class="fc" style="--c:#64748b"><div class="ic">🔒</div><h4>Roles and Security</h4><p>Receptionist, Dentist and Manager roles plus multi-company rules.</p></div></div>
-
 <h2>How It Works</h2><p class="sub">The module follows the real visit from booking to follow-up.</p>
 <div class="steps"><div class="st"><b>1</b><h4>Register</h4><p>Add the patient with history, allergies and insurance.</p></div><div class="st"><b>2</b><h4>Book</h4><p>Choose dentist, chair and time. Patient is emailed.</p></div><div class="st"><b>3</b><h4>Check in</h4><p>Move the visit through Checked In and In Progress.</p></div><div class="st"><b>4</b><h4>Plan</h4><p>Propose a phased plan with an estimate.</p></div><div class="st"><b>5</b><h4>Treat</h4><p>Record procedures per tooth; the chart updates.</p></div><div class="st"><b>6</b><h4>Prescribe</h4><p>Print the prescription and send lab work.</p></div><div class="st"><b>7</b><h4>Invoice</h4><p>Create the invoice and collect payment.</p></div><div class="st"><b>8</b><h4>Review</h4><p>Follow results on the dashboard.</p></div></div>
-<div class="path">Appointment: Draft <i>&rarr;</i> Confirmed <i>&rarr;</i> Checked In <i>&rarr;</i> In Progress <i>&rarr;</i> Done &nbsp;|&nbsp; Treatment: Draft <i>&rarr;</i> In Progress <i>&rarr;</i> Completed <i>&rarr;</i> Invoiced</div>
-
+<div class="path">Appointment: Draft <i>→</i> Confirmed <i>→</i> Checked In <i>→</i> In Progress <i>→</i> Done  |  Treatment: Draft <i>→</i> In Progress <i>→</i> Completed <i>→</i> Invoiced</div>
 <h2>Business Benefits</h2><p class="sub">For single-dentist practices, multi-chair clinics, specialists and clinic groups.</p>
 <div class="two"><div class="box"><h3>Perfect for</h3><ul><li>Practices moving off paper records</li><li>Clinics with several dentists and chairs</li><li>Orthodontic, implant and cosmetic specialists</li><li>Pediatric dentistry</li><li>Multi-branch clinic groups</li></ul></div>
 <div class="box"><h3>What you gain</h3><ul><li>Fewer missed visits through reminders</li><li>No double bookings</li><li>Faster, error-free billing</li><li>Complete clinical history in one record</li><li>Clear view of revenue and unpaid invoices</li></ul></div></div>
-
 <h2>Module Screenshots</h2><p class="sub">The screens your team will use every day.</p>
-<div class="row"><div class="txt"><span class="tag">Dashboard</span><h3>Clinic Dashboard</h3><p>Eight KPI cards show patients, appointments today, the next seven days, open treatments, revenue, outstanding invoices, open plans and lab orders waiting. Today's schedule, six-month revenue, status mix and dentist workload sit below, and every card opens its list.</p></div><div class="pic"><img src="01_dashboard.png" alt="Clinic Dashboard" loading="lazy"/></div></div><div class="row rev"><div class="txt"><span class="tag">Patients</span><h3>Patient Record and Dental Chart</h3><p>One record per patient with contact details, medical history, insurance and smart buttons. Allergies show in a red banner. The chart shows all 32 teeth in FDI notation, coloured by the latest condition.</p></div><div class="pic"><img src="03_dental_chart.png" alt="Patient Record and Dental Chart" loading="lazy"/></div></div><div class="row"><div class="txt"><span class="tag">Scheduling</span><h3>Appointment Calendar</h3><p>A week calendar with a colour for each status. Open any booking with one click. The same data is also available as list, kanban, pivot and graph views.</p></div><div class="pic"><img src="04_appointment_calendar.png" alt="Appointment Calendar" loading="lazy"/></div></div><div class="row rev"><div class="txt"><span class="tag">Scheduling</span><h3>Appointment Workflow</h3><p>Move each visit through Draft, Confirmed, Checked In, In Progress and Done. Overlapping bookings for the same dentist or chair are blocked, and confirming emails the patient.</p></div><div class="pic"><img src="05_appointment_form.png" alt="Appointment Workflow" loading="lazy"/></div></div><div class="row"><div class="txt"><span class="tag">Clinical</span><h3>Treatment and Invoicing</h3><p>Record procedure, tooth, surface, quantity, price and discount. Set Chart Status After and the chart updates on completion. Create Invoice makes the customer invoice in one click.</p></div><div class="pic"><img src="06_treatment.png" alt="Treatment and Invoicing" loading="lazy"/></div></div><div class="row rev"><div class="txt"><span class="tag">Clinical</span><h3>Treatment Plans</h3><p>Plan bigger cases in four phases with a total estimate. When the patient accepts, Start Treatment copies every line into a new treatment.</p></div><div class="pic"><img src="07_treatment_plan.png" alt="Treatment Plans" loading="lazy"/></div></div><div class="row"><div class="txt"><span class="tag">Clinical</span><h3>Prescription PDF</h3><p>Pick medicines with default dosage, then print a clean PDF with diagnosis, allergy warning and a signature line.</p></div><div class="pic"><img src="08_prescription_pdf.png" alt="Prescription PDF" loading="lazy"/></div></div><div class="row rev"><div class="txt"><span class="tag">Clinical</span><h3>Dental Lab Orders</h3><p>Track crowns, bridges, dentures and aligners from Draft to Sent, Received and Fitted, with shade, due date and cost.</p></div><div class="pic"><img src="09_lab_order.png" alt="Dental Lab Orders" loading="lazy"/></div></div><div class="row"><div class="txt"><span class="tag">Setup</span><h3>Procedure Catalogue</h3><p>Keep one price list with code, category, duration and price. Sample procedures, medicines and chairs are installed with the module.</p></div><div class="pic"><img src="10_procedures.png" alt="Procedure Catalogue" loading="lazy"/></div></div>
-
+<div class="row"><div class="txt"><span class="tag">Dashboard</span><h3>Clinic Dashboard</h3><p>Eight KPI cards show patients, appointments today, the next seven days, open treatments, revenue, outstanding invoices, open plans and lab orders waiting. Today's schedule, six-month revenue, status mix and dentist workload sit below, and every card opens its list.</p></div><div class="pic"><img alt="Clinic Dashboard" loading="lazy" src="01_dashboard.png"/></div></div><div class="row rev"><div class="txt"><span class="tag">Patients</span><h3>Patient Record and Dental Chart</h3><p>One record per patient with contact details, medical history, insurance and smart buttons. Allergies show in a red banner. The chart shows all 32 teeth in FDI notation, coloured by the latest condition.</p></div><div class="pic"><img alt="Patient Record and Dental Chart" loading="lazy" src="03_dental_chart.png"/></div></div><div class="row"><div class="txt"><span class="tag">Scheduling</span><h3>Appointment Calendar</h3><p>A week calendar with a colour for each status. Open any booking with one click. The same data is also available as list, kanban, pivot and graph views.</p></div><div class="pic"><img alt="Appointment Calendar" loading="lazy" src="04_appointment_calendar.png"/></div></div><div class="row rev"><div class="txt"><span class="tag">Scheduling</span><h3>Appointment Workflow</h3><p>Move each visit through Draft, Confirmed, Checked In, In Progress and Done. Overlapping bookings for the same dentist or chair are blocked, and confirming emails the patient.</p></div><div class="pic"><img alt="Appointment Workflow" loading="lazy" src="05_appointment_form.png"/></div></div><div class="row"><div class="txt"><span class="tag">Clinical</span><h3>Treatment and Invoicing</h3><p>Record procedure, tooth, surface, quantity, price and discount. Set Chart Status After and the chart updates on completion. Create Invoice makes the customer invoice in one click.</p></div><div class="pic"><img alt="Treatment and Invoicing" loading="lazy" src="06_treatment.png"/></div></div><div class="row rev"><div class="txt"><span class="tag">Clinical</span><h3>Treatment Plans</h3><p>Plan bigger cases in four phases with a total estimate. When the patient accepts, Start Treatment copies every line into a new treatment.</p></div><div class="pic"><img alt="Treatment Plans" loading="lazy" src="07_treatment_plan.png"/></div></div><div class="row"><div class="txt"><span class="tag">Clinical</span><h3>Prescription PDF</h3><p>Pick medicines with default dosage, then print a clean PDF with diagnosis, allergy warning and a signature line.</p></div><div class="pic"><img alt="Prescription PDF" loading="lazy" src="08_prescription_pdf.png"/></div></div><div class="row rev"><div class="txt"><span class="tag">Clinical</span><h3>Dental Lab Orders</h3><p>Track crowns, bridges, dentures and aligners from Draft to Sent, Received and Fitted, with shade, due date and cost.</p></div><div class="pic"><img alt="Dental Lab Orders" loading="lazy" src="09_lab_order.png"/></div></div><div class="row"><div class="txt"><span class="tag">Setup</span><h3>Procedure Catalogue</h3><p>Keep one price list with code, category, duration and price. Sample procedures, medicines and chairs are installed with the module.</p></div><div class="pic"><img alt="Procedure Catalogue" loading="lazy" src="10_procedures.png"/></div></div>
 <h2>User Roles</h2><p class="sub">Assign one role per user. Higher roles include the lower ones.</p>
 <table><tr><th>Role</th><th>Access</th></tr>
 <tr><td>Receptionist</td><td>Patients, appointments, view treatments and create invoices.</td></tr>
 <tr><td>Dentist</td><td>Everything above plus charts, treatments, plans, prescriptions, X-rays and lab orders.</td></tr>
 <tr><td>Manager</td><td>Full access and the Configuration menu for dentists, procedures, medicines and chairs.</td></tr></table>
-
 <h2>Custom Development and Version Support</h2><p class="sub">We can adapt the module to your Odoo version or add features such as insurance claims, patient portal booking, SMS reminders and custom reports.</p>
 <div style="text-align:center"><a class="btn" href="mailto:info@smartdesksolutions.com">Request custom development</a></div>
-
 <h2>Support and Contact</h2><p class="sub">Bug reports, installation help and usage guidance.</p>
 <div class="two"><div class="box"><h3>Email</h3><a href="mailto:info@smartdesksolutions.com">info@smartdesksolutions.com</a></div><div class="box"><h3>Website</h3><a href="https://www.smartdesksolutions.com">www.smartdesksolutions.com</a></div></div>
-
 <div class="cta"><h2>Ready to modernise your dental clinic?</h2><p>Install the module, add your dentists and book your first patient in minutes.</p><a class="btn" href="mailto:info@smartdesksolutions.com">Get in touch</a></div>
 <div class="foot">Developed by SmartDeskSolutions | Technical name: dental_management | License: LGPL-3</div>
 </div></body></html>
